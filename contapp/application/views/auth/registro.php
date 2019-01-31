@@ -1,70 +1,112 @@
-<?php
-?>
-<!DOCTYPE>
-<html>
-<head>
-	<title>Registro Usuario</title>
-</head>
-<body>
-	
-	<?php
-		if($this->session->userdata('error')!=null){
-			echo '<h3 style="color:red;">Se han encontrado errores en el formulario</h3>';
-		}
-	?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Webapp CONTAPP">
+    <meta name="author" content="SAARGO">
+    <title>CONTAPP</title>
 
-	<form method="post" action="<?=base_url()?>index.php/auth/add_usuario">
+    <?php
+        $this->load->view('comun/css');     
+    ?>
 
-	    <div class="col-lg-3">
-	    	 <div class="form-group">
-	    		  	
-	    	 <label for="rut">Rut</label>
-               <input type="text" oninput="checkRut(this)" name="rut" required="required">
-	    	
-	    	</div>
-	  
-	    </div>
-	    
-        <div class="col-lg-3">
-	    	 <div class="form-group">
-	    		  	
-	    	 <label for="nombre">Nombre</label>
-               <input type="text" name="nombre" required="required">
-	    	
-	    	</div>
-	  
-	    </div>
-	    
-	    <div class="col-lg-3">
-	    	 <div class="form-group">
-	    		  	
-	    	 <label for="correo">Correo</label>
-               <input type="email" name="correo" required="required">
+  </head>
+
+  <body id="page-top">
+
+   
+
+    <div id="wrapper">
+
+      
+      <div id="content-wrapper">
+
+              <div class="container">
               
-	    	
-	    	</div>
-	  
-	    </div>
+              <?php
+                        if($this->session->userdata('error')!=null){
+                            echo '<h3 style="color:red;">Se han encontrado errores en el formulario</h3>';
+                        }
+                    ?>
 
-	    <div class="col-lg-3">
-	    	 <div class="form-group">
-	    		  	
-	    	 <label for="contrasena">Contraseña</label>
-               <input type="password" name="contrasena" required="required">
- 
-	    	
-	    	</div>
-	  
-	    </div>
-	           
-	    <div class="col-lg-12 text-center">
-           
-           <button type="submit" class="btn btn-success btn-lg">Guardar usuario</button>
+                    <form method="post" action="<?=base_url()?>index.php/auth/add_usuario">
+                        <div class="col-lg-6 offset-lg-3">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                    
+                            <label for="rut">Rut</label>
+                            <input type="text" class="form-control" oninput="checkRut(this)" name="rut" required="required">
+                            
+                            </div>
+                    
+                        </div>
+                        
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                    
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" name="nombre" required="required">
+                            
+                            </div>
+                    
+                        </div>
+                        
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                    
+                            <label for="correo">Correo</label>
+                            <input type="email" class="form-control" name="correo" required="required">
+                            
+                            
+                            </div>
+                    
+                        </div>
 
-        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                    
+                            <label for="contrasena">Contraseña</label>
+                            <input type="password" class="form-control" name="contrasena" required="required">
+                
+                            
+                            </div>
+                    
+                        </div>
+                            
+                        <div class="col-lg-12 text-center">
+                        
+                         <button type="submit" class="btn btn-success" style="width: 100% !important;">Registrarme</button>
 
-	</form>
-	<script type="text/javascript">
+                        </div>
+                        <div class="col-lg-12 text-center">
+                         <br>
+                         <a href="<?=base_url()?>index.php/auth/login" class="btn btn-info" style="width: 100% !important;"><- Volver</a>
+
+                        </div>
+                        </div>
+                    </form>
+					
+			  </div>
+
+      </div>
+      <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+
+
+    <?php
+        $this->load->view('comun/js');     
+    ?>
+    <script type="text/javascript">
 		function checkRut(rut) {
     // Despejar Puntos
     var valor = rut.value.replace('.','');
@@ -113,6 +155,10 @@
     rut.setCustomValidity('');
 }
 	</script>
-</body>
+  </body>
 
 </html>
+
+
+
+

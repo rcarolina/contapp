@@ -25,7 +25,12 @@ class Auth extends CI_Controller {
         $this->session->set_userdata($session_data);
         redirect(base_url());
     }*/
-
+	public function index()
+    {
+    
+		redirect('index.php/auth/login','refresh');
+		
+    }
 
     public function registro()
     {
@@ -53,7 +58,7 @@ class Auth extends CI_Controller {
 
 		if ($usuario!=null) {
 			$this->session->set_userdata('usuario',$usuario);
-			redirect('index.php/auth/inicio','refresh');
+			redirect('index.php/portal/home','refresh'); //ACCESO A PORTAL
 		}else{
 			$this->session->set_userdata('error',"Datos incorrectos");
 			redirect('index.php/auth/login','refresh');

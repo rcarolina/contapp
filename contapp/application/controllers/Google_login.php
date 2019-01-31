@@ -52,7 +52,7 @@ public function index()
                 $this->session->set_userdata('mensaje_exito',"Registrado correctamente a través de Google. <br>Encuentra el código en tu email");
         }
 
-        redirect('auth/inicio','refresh');
+        redirect('index.php/portal/home','refresh');
         //var_dump($google_data);
         
        

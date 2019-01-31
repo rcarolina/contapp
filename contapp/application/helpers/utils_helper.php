@@ -72,6 +72,20 @@
     }
 
 
+    function is_login(){
+        $CI =& get_instance();
+        $CI->load->library('session');
+        if ($CI->session->userdata('usuario')["uuid"]!=null ) {
+            
+                
+                return true;
+            
+        }else{
+             
+             redirect('index.php/auth/login','refresh');
+             
+        }
+    }
   /*function is_logued(){
         $CI =& get_instance();
         $CI->load->library('session');
