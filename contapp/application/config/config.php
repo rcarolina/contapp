@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://kisawea.net/contapp/';
+$config['base_url'] = 'http://contapp:8888';
 
 /*
 |--------------------------------------------------------------------------

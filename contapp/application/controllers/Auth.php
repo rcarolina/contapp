@@ -9,7 +9,7 @@ class Auth extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('utils');
 		$this->load->model('Modelo_Usuario');
-		$this->output->enable_profiler(true);
+		//$this->output->enable_profiler(true);
 		$this->load->library('google');
 		$this->load->library('session');
 		 

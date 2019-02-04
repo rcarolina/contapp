@@ -74,8 +74,8 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'=> 'pgsql:host=localhost;port=5432;dbname=contapp',
-	'hostname' => 'localhost',
+	'dsn'=> 'pgsql:host=35.237.1.231;port=5432;dbname=contapp',
+	'hostname' => '35.237.1.231',
 	'username' => 'postgres',
 	'password' => 'Contapp.12345..',
 	'database' => 'contapp',

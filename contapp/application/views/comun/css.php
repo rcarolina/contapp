@@ -4,6 +4,8 @@
 <!-- Font Awesome (Icons) -->
 <link href="<?=base_url()?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
+<link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet">
+
 <!-- Datatables plugin CSS-->
 <link href="<?=base_url()?>assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
