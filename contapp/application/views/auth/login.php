@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Webapp CONTAPP">
     <meta name="author" content="SAARGO">
-    <title>CONTAPP</title>
+    <title>CONTAPP - Login</title>
 
     <?php
         $this->load->view('comun/css');     
@@ -33,30 +33,26 @@
 		    <p>Introduzca sus credenciales para iniciar sesión</p>
 		    <?php
 				if($this->session->userdata('error')!=null){
-					echo '<h1 style="color:red;">'.$this->session->userdata('error').'</h1>';
+					echo '<h5 style="color:red;">'.$this->session->userdata('error').'</h5>';
 					$this->session->unset_userdata('error');
 				}
 			?>
 		    <form  method="post" action="<?=base_url()?>index.php/auth/iniciar_session">
+	            <div class="form-group"><input type="email" id="inputEmail" class="form-control" placeholder="Correo Electrónico" required="required" autofocus="autofocus"></div>
+	            <div class="form-group"><input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="required"></div>
 	            <div class="form-group">
-	                <input type="email" id="inputEmail" class="form-control" placeholder="Correo Electrónico" required="required" autofocus="autofocus">
+		            <div class="checkbox">
+	                	<label>
+							<input type="checkbox" value="remember-me">
+							Recordar Contraseña
+						</label>
+	              	</div>
 	            </div>
+	            <div class="form-group"><button type="submit" class="btn btn-gradient-principal btn-block" href="#">Iniciar Sesión</button></div>
 	            <div class="form-group">
-	                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="required">
-	            </div>
-	            <div class="form-group">
-	              <div class="checkbox">
-	                <label>
-	                  <input type="checkbox" value="remember-me">
-	                  Recordar Contraseña
-	                </label>
-	              </div>
-	            </div>
-	            <button type="submit" class="btn btn-gradient-principal btn-block" href="#">Iniciar Sesión</button>
-	            <div class="form-group">
-						<a href="<?=$url?>" class="btn btn-google btn-danger">
+					<a href="<?=$url?>" class="btn btn-google btn-danger">
 						<i class="fab fa-google-plus-g"></i> <strong>Ingresar con Google</strong>
-						</a>
+					</a>
 				</div>
           	</form>
 	        <div class="action-module">
@@ -65,7 +61,7 @@
 	    	</div>
 	    </div>
 
-    </div>
+    </div><!-- /.container -->
 
     <?php
         $this->load->view('comun/js');     

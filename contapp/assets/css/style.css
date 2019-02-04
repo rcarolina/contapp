@@ -413,7 +413,8 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 
 /* LOGIN */
 
-body.login {
+body.login,
+body.register {
 	background: url("../img/bg-login-contapp.jpg");
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -421,7 +422,8 @@ body.login {
 	font-size: .9rem;
 	color: #76838f;
 }
-body.login .container {
+body.login .container,
+body.register .container {
 	max-width: 100%;
 	margin: 0;
 	padding: 0;
@@ -434,6 +436,10 @@ body.login .container {
 }
 .register-module-info .info-wrap {
 	margin-top: 100px;
+}
+.register .register-module-info .info-wrap,
+.recover .register-module-info .info-wrap {
+	margin-top: 200px;
 }
 .register-module-info .brand {
 	width: 200px;
@@ -466,9 +472,10 @@ body.login .container {
 
 /* LOGIN - Form Module */
 
-.login .form-module {
+.login .form-module,
+.register .form-module {
 	background: #fff;
-	min-width: 450px;
+	max-width: 450px;
 	height: auto;
     min-height: 100%;
 	position: absolute;
@@ -476,15 +483,18 @@ body.login .container {
     right: 0;  
     padding: 50px 50px 150px;
 }
-.login .form-module form {
+.login .form-module form,
+.register .form-module form {
 	margin-bottom: 30px;
 }
-.login .form-module h3 {
+.login .form-module h3,
+.register .form-module h3 {
 	margin-bottom: 50px;
 	font-size: 1.5rem;
 	color: #47128c;
 } 
-.login .form-module .btn {
+.login .form-module .btn,
+.register .form-module .btn {
 	border-radius: 40px;
 	transition: all 0.15s ease-in-out;
 	-webkit-transition: all 0.15s ease-in-out;
@@ -497,7 +507,8 @@ body.login .container {
 	width: 100%;
 	font-weight: 100;
 }
-.login .form-module .action-module p {
+.login .form-module .action-module p,
+.register .form-module .action-module p {
 	margin-bottom: 5px;
 }
 

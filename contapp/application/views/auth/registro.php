@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Webapp CONTAPP">
     <meta name="author" content="SAARGO">
-    <title>CONTAPP</title>
+    <title>CONTAPP - Registro</title>
 
     <?php
         $this->load->view('comun/css');     
@@ -14,94 +14,41 @@
 
   </head>
 
-  <body id="page-top">
+  <body class="register bg-dark">
+	  
+	  
+	 <div class="container">
+	    
+	    <div class="register-module-info">
+		    <div class="info-wrap">
+			    <img class="brand" src="<?=base_url()?>assets/img/contapp-brand.svg" alt="Logo Contapp">
+			    <h4>Haz tu contabilidad de forma rápida y simple</h4>
+		    </div>
+	    </div>
+	    
+	    <div class="login-module form-module">
+		    <h3>Registro</h3>
+		    <p>Regístrate rellenando los datos a continuación</p>
+		    <?php
+                if($this->session->userdata('error')!=null){
+                    echo '<h5 style="color:red;">Se han encontrado errores en el formulario</h5>';
+                }
+            ?>
+            <form method="post" action="<?=base_url()?>index.php/auth/add_usuario">
+	            
+	            <div class="form-group"><input type="text" class="form-control" oninput="checkRut(this)" name="rut" placeholder="RUT" required="required"></div>
+	            <div class="form-group"><input type="text" class="form-control" name="nombre" required="required" placeholder="Nombre"></div>
+	            <div class="form-group"><input type="email" class="form-control" name="correo" placeholder="Correo Electrónico" required="required"></div>
+	            <div class="form-group"><input type="password" class="form-control" name="contrasena" required="required" placeholder="Contraseña"></div>
+	            <div class="form-group"><button type="submit" class="btn btn-gradient-principal btn-block">Registrarme</button></div>
+            </form>
+            <div class="action-module">
+	            <p>¿Ya tienes una cuenta? <a href="<?=base_url()?>index.php/auth/login">Iniciar sesión</a></p>
+	            <a href="#">¿Olvidaste tu Contraseña?</a>
+	    	</div> 
+	    </div>
 
-   
-
-    <div id="wrapper">
-
-      
-      <div id="content-wrapper">
-
-              <div class="container">
-              
-              <?php
-                        if($this->session->userdata('error')!=null){
-                            echo '<h3 style="color:red;">Se han encontrado errores en el formulario</h3>';
-                        }
-                    ?>
-
-                    <form method="post" action="<?=base_url()?>index.php/auth/add_usuario">
-                        <div class="col-lg-6 offset-lg-3">
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                    
-                            <label for="rut">Rut</label>
-                            <input type="text" class="form-control" oninput="checkRut(this)" name="rut" required="required">
-                            
-                            </div>
-                    
-                        </div>
-                        
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                    
-                            <label for="nombre">Nombre</label>
-                            <input type="text" class="form-control" name="nombre" required="required">
-                            
-                            </div>
-                    
-                        </div>
-                        
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                    
-                            <label for="correo">Correo</label>
-                            <input type="email" class="form-control" name="correo" required="required">
-                            
-                            
-                            </div>
-                    
-                        </div>
-
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                    
-                            <label for="contrasena">Contraseña</label>
-                            <input type="password" class="form-control" name="contrasena" required="required">
-                
-                            
-                            </div>
-                    
-                        </div>
-                            
-                        <div class="col-lg-12 text-center">
-                        
-                         <button type="submit" class="btn btn-success" style="width: 100% !important;">Registrarme</button>
-
-                        </div>
-                        <div class="col-lg-12 text-center">
-                         <br>
-                         <a href="<?=base_url()?>index.php/auth/login" class="btn btn-info" style="width: 100% !important;"><- Volver</a>
-
-                        </div>
-                        </div>
-                    </form>
-					
-			  </div>
-
-      </div>
-      <!-- /.content-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
-
-
+	 </div><!-- /.container --> 
 
     <?php
         $this->load->view('comun/js');     
